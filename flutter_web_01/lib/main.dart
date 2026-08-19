@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 void main(List<String> args) {
   runApp(MainPage());
@@ -8,51 +8,37 @@ class MainPage extends StatefulWidget {
   const MainPage({super.key});
 
   @override
-  State<MainPage> createState() {
-    print("初始化");
-    return _MainPageState();
-  }
+  State<MainPage> createState() => _MainPageState();
 }
 
 class _MainPageState extends State<MainPage> {
-  @override
-  void initState() {
-    print("initState");
-    // TODO: implement initState
-    super.initState();
-  }
-
-  @override
-  void didChangeDependencies() {
-    print("didChangeDependencies");
-    // TODO: implement didChangeDependencies
-    super.didChangeDependencies();
-  }
-
+  int count = 0;
   @override
   Widget build(BuildContext context) {
-    print("build");
-    return Container();
-  }
-
-  @override
-  void didUpdateWidget(covariant MainPage oldWidget) {
-    print("didUpdateWidget");
-    // TODO: implement didUpdateWidget
-    super.didUpdateWidget(oldWidget);
-  }
-
-  @override
-  void deactivate() {
-    print("deactivate");
-    // TODO: implement deactivate
-    super.deactivate();
-  }
-
-  @override
-  void dispose() {
-    print("dispose");
-    // TODO: implement dispose
-    super.dispose();
+    return MaterialApp(
+      home: Scaffold(
+        body: Center(
+          child: Row(
+            children: [
+              TextButton(
+                onPressed: () {
+                  count--;
+                  setState(() {});
+                },
+                child: Text("减"),
+              ),
+              Text(count.toString()),
+              TextButton(
+                onPressed: () {
+                  count++;
+                  setState(() {});
+                },
+                child: Text("加"),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
   }
 }
