@@ -8,7 +8,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:flutter_web_01/main.dart';
+import 'package:flutter_web_01/%E7%BB%84%E4%BB%B6/Align%E7%BB%84%E4%BB%B6.dart';
 
 void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
